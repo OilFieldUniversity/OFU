@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <script src="{{url_for('static',filename='js/javascript.js')}}"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Flask Site</title>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/login">Login</a> |
+        <a href="/signup">Sign Up</a> |
+        <a href="/dashboard">Dashboard</a>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">
+            <h2>CodeZilla</h2>
+          </div>
+          <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Sign Up </a></li>
+            <li><a href="/dashboard">Dashboard </a></li>
+          </ul>
+          <div class="nav-actions">
+            <button class="btn-secondary">Contact  Us </button>
+            <button class="btn-primary"> Soon</button>
+          </div>
+          <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <span class="badge">دورة مجانية</span>
+            <h1>تعلم البرمجة للمبتدئين من الصفر إلى الاحتراف</h1>
+            <p class="hero-description">
+              ابدأ رحلتك في عالم البرمجة مع دورة شاملة تغطي جميع الأساسيات التي تحتاجها لتصبح مبرمجاً محترفاً.
+              تعلم بطريقة عملية مع أمثلة واقعية ومشاريع تطبيقية.
+            </p>
+            <div class="hero-stats">
+              <div class="stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">درس فيديو</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">ساعة محتوى</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">10K+</span>
+                <span class="stat-label">طالب</span>
+              </div>
+            </div>
+            <div class="hero-actions">
+              <button class="btn-primary btn-large">ابدأ التعلم الآن</button>
+              <button class="btn-outline btn-large">تحميل المنهج</button>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="code-window">
+              <div class="window-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="code-content">
+                <pre><code><span class="keyword">def</span> <span class="function">hello_world</span>():
+    <span class="keyword">print</span>(<span class="string">"مرحباً بك في عالم البرمجة!"</span>)
+
+<span class="keyword">for</span> i <span class="keyword">in</span> <span class="function">range</span>(<span class="number">5</span>):
+    <span class="function">hello_world</span>()
+
+<span class="comment"># ابدأ رحلتك الآن</span></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What You'll Learn -->
+    <section class="section what-learn">
+      <div class="container">
+        <h2 class="section-title">ماذا ستتعلم؟</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">📚</div>
+            <h3>أساسيات البرمجة</h3>
+            <p>تعلم المفاهيم الأساسية للبرمجة والتفكير المنطقي وحل المشكلات</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💻</div>
+            <h3>لغات البرمجة</h3>
+            <p>تعرف على لغات البرمجة الشائعة وكيفية اختيار اللغة المناسبة</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔧</div>
+            <h3>الأدوات والبيئات</h3>
+            <p>إعداد بيئة التطوير واستخدام الأدوات الضرورية</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>مشاريع تطبيقية</h3>
+            <p>بناء مشاريع حقيقية لتطبيق ما تعلمته بشكل عملي</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3>أفضل الممارسات</h3>
+            <p>تعلم كيفية كتابة كود نظيف وفعال واحترافي</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎓</div>
+            <h3>شهادة إتمام</h3>
+            <p>احصل على شهادة معتمدة بعد إكمال الدورة بنجاح</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curriculum -->
+    <section class="section curriculum">
+      <div class="container">
+        <h2 class="section-title">محتوى الدورة</h2>
+        <div class="curriculum-list">
+          <div class="curriculum-item">
+            <div class="curriculum-header">
+              <div class="curriculum-title">
+                <span class="curriculum-number">01</span>
+                <h3>مقدمة في البرمجة</h3>
+              </div>
+              <button class="curriculum-toggle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="curriculum-content">
+              <ul class="lesson-list">
+                <li class="lesson-item">
+                  <span class="lesson-icon">▶️</span>
+                  <span class="lesson-name">ما هي البرمجة؟</span>
+                  <span class="lesson-duration">12:30</span>
+                </li>
+                <li class="lesson-item">
+                  <span class="lesson-icon">▶️</span>
+                  <span class="lesson-name">لماذا نتعلم البرمجة؟</span>
+                  <span class="lesson-duration">10:15</span>
+                </li>
+                <li class="lesson-item">
+                  <span class="lesson-icon">▶️</span>
+                  <span class="lesson-name">كيف تعمل البرامج؟</span>
+                  <span class="lesson-duration">15:45</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="curriculum-item">
+            <div class="curriculum-header">
+              <div class="curriculum-title">
+                <span class="curriculum-number">02</span>
+                <h3>أساسيات البرمجة</h3>
+              </div>
+              <button class="curriculum-toggle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="curriculum-content">
+              <ul class="lesson-list">
+                <li class="lesson-item">
+                  <span class="lesson-icon">▶️</span>
+                  <span class="lesson-name">المتغيرات وأنواع البيانات</span>
+                  <span class="lesson-duration">18:20</span>
+                </li>
+                <li class="lesson-item">
+                  <span class="lesson-icon">▶️</span>
+                  <span class="lesson-name">العمليات الحسابية</span>
+                  <span class="lesson-duration">14:10</span>
+                </li>
+                <li class="lesson-item">
+                  <span class="lesson-icon">▶️</span>
+                  <span class="lesson-name">الجمل الشرطية</span>
+                  <span class="lesson-duration">20:30</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="curriculum-item">
+            <div class="curriculum-header">
+              <div class="curriculum-title">
+                <span class="curriculum-number">03</span>
+                <h3>الحلقات والدوال</h3>
+              </div>
+              <button class="curriculum-toggle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="curriculum-content">
+              <ul class="lesson-list">
+                <li class="lesson-item">
+                  <span class="lesson-icon">▶️</span>
+                  <span class="lesson-name">حلقة For</span>
+                  <span class="lesson-duration">16:45</span>
+                </li>
+                <li class="lesson-item">
+                  <span class="lesson-icon">▶️</span>
+                  <span class="lesson-name">حلقة While</span>
+                  <span class="lesson-duration">15:20</span>
+                </li>
+                <li class="lesson-item">
+                  <span class="lesson-icon">▶️</span>
+                  <span class="lesson-name">إنشاء الدوال</span>
+                  <span class="lesson-duration">22:15</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="curriculum-item">
+            <div class="curriculum-header">
+              <div class="curriculum-title">
+                <span class="curriculum-number">04</span>
+                <h3>المشاريع التطبيقية</h3>
+              </div>
+              <button class="curriculum-toggle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="curriculum-content">
+              <ul class="lesson-list">
+                <li class="lesson-item">
+                  <span class="lesson-icon">▶️</span>
+                  <span class="lesson-name">مشروع: آلة حاسبة</span>
+                  <span class="lesson-duration">25:30</span>
+                </li>
+                <li class="lesson-item">
+                  <span class="lesson-icon">▶️</span>
+                  <span class="lesson-name">مشروع: لعبة التخمين</span>
+                  <span class="lesson-duration">30:15</span>
+                </li>
+                <li class="lesson-item">
+                  <span class="lesson-icon">▶️</span>
+                  <span class="lesson-name">مشروع: قائمة المهام</span>
+                  <span class="lesson-duration">35:45</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>هل أنت مستعد لبدء رحلتك في عالم البرمجة؟</h2>
+          <p>انضم إلى أكثر من 10,000 طالب يتعلمون البرمجة معنا</p>
+          <button class="btn-primary btn-large">ابدأ التعلم مجاناً</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>CodeZilla</h3>
+            <p>منصة تعليمية متخصصة في تعليم البرمجة للمبتدئين باللغة العربية</p>
+          </div>
+          <div class="footer-section">
+            <h4>روابط سريعة</h4>
+            <ul>
+              <li><a href="#courses">الدورات</a></li>
+              <li><a href="#about">من نحن</a></li>
+              <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>تواصل معنا</h4>
+            <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 CodeZilla. جميع الحقوق محفوظة.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+      <button class="chat-bubble" id="chatBubble">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span class="notification-dot"></span>
+      </button>
+      <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+          <h4>محادثة مباشرة</h4>
+          <button class="chat-close" id="chatClose">✕</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+          <div class="message system-message">
+            <p>مرحباً! كيف يمكنني مساعدتك؟</p>
+          </div>
+        </div>
+        <div class="chat-input-container">
+          <input type="text" class="chat-input" id="chatInput" placeholder="اكتب رسالتك...">
+          <button class="chat-send" id="chatSend">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+</body>
+</html>

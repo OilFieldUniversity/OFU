@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/login">Login</a> |
+        <a href="/signup">Sign Up</a> |
+        <a href="/dashboard">Dashboard</a>
+    </nav>
+
+    <main class="container">
+        <section class="dashboard-hero">
+            <h1>Dashboard</h1>
+            {% if user %}
+            <p class="lead">Welcome back, <strong>{{ user['name'] }}</strong> — this is your personal dashboard.</p>
+            {% endif %}
+        </section>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <section class="flashes">
+            {% for msg in messages %}
+            <div class="flash">{{ msg }}</div>
+            {% endfor %}
+        </section>
+        {% endif %}
+        {% endwith %}
+
+        <section class="dashboard-grid">
+            <div class="card">
+                <h2>Your Profile</h2>
+                {% if user %}
+                <p><strong>Name:</strong> {{ user['name'] }}</p>
+                <p><strong>Email:</strong> {{ user['email'] }}</p>
+                {% else %}
+                <p>No profile data available.</p>
+                {% endif %}
+            </div>
+
+            <div class="card">
+                <h2>Quick Actions</h2>
+                <ul>
+                    <li><a href="/">Go to Home</a></li>
+                    <li><a href="/logout">Log out</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body>
+    <nav class="header">
+        <div class="container navbar">
+            <div class="logo"><h2>موقعي</h2></div>
+            <div class="nav-actions">
+                <a class="btn-secondary" href="/login">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="auth-page container">
+        <div class="auth-card" id="auth-card">
+            <header class="auth-header">
+                <h2>إنشاء حساب جديد</h2>
+                <p>انشئ حسابك للوصول إلى الميزات الشخصية</p>
+            </header>
+
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class="flashes">
+                {% for msg in messages %}
+                <div class="flash">{{ msg }}</div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+
+            <form action="/signup" method="post" novalidate>
+                <div class="form-field">
+                    <label for="name">الاسم</label>
+                    <input id="name" name="name" type="text" required placeholder="الاسم الكامل">
+                </div>
+
+                <div class="form-field">
+                    <label for="email">البريد الإلكتروني</label>
+                    <input id="email" name="email" type="email" required placeholder="example@mail.com">
+                </div>
+
+                <div class="form-field">
+                    <label for="password">كلمة المرور</label>
+                    <input id="password" name="password" type="password" required placeholder="••••••••">
+                </div>
+
+                <div class="auth-actions">
+                    <button class="btn-primary" type="submit">إنشاء الحساب</button>
+                    <a class="btn-secondary" href="/">الصفحة الرئيسية</a>
+                </div>
+            </form>
+
+            <div class="auth-footer">
+                <p>هل لديك حساب؟ <a href="/login">تسجيل الدخول</a></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="{{url_for('static',filename='js/javascript.js')}}"></script>
+    <div style="display:none" id="oauth-links">
+        <a href="/login/google">Google</a>
+        <a href="/login/facebook">Facebook</a>
+    </div>
+</body>
+</html>

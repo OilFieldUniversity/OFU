@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <nav class="header">
+        <div class="container navbar">
+            <div class="logo"><h2>موقعي</h2></div>
+            <div class="nav-actions">
+                <a class="btn-secondary" href="/signup">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="auth-page container">
+        <div class="auth-card" id="auth-card">
+            <header class="auth-header">
+                <h2>تسجيل الدخول</h2>
+                <p>ادخل بياناتك لتسجيل الدخول إلى حسابك</p>
+            </header>
+
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class="flashes">
+                {% for msg in messages %}
+                <div class="flash">{{ msg }}</div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+
+            <form action="/login" method="post" novalidate>
+                <div class="form-field">
+                    <label for="email">البريد الإلكتروني</label>
+                    <input id="email" name="email" type="email" required placeholder="example@mail.com">
+                </div>
+
+                <div class="form-field">
+                    <label for="password">كلمة المرور</label>
+                    <input id="password" name="password" type="password" required placeholder="••••••••">
+                </div>
+
+                <div class="auth-actions">
+                    <button class="btn-primary" type="submit">تسجيل الدخول</button>
+                    <a class="btn-secondary" href="/">الصفحة الرئيسية</a>
+                </div>
+            </form>
+
+            <div class="auth-footer">
+                <p>ليس لديك حساب؟ <a href="/signup">إنشاء حساب</a></p>
+            </div>
+                <div style="margin-top:14px; text-align:center;">
+                    <p style="color:var(--text-light); margin-bottom:8px;">أو سجّل الدخول عبر</p>
+                    <a class="btn-outline" href="/login/google">Google</a>
+                    <a class="btn-outline" href="/login/facebook">Facebook</a>
+                    <form action="/signin-guest" method="post" style="display:inline-block; margin-left:8px;">
+                        <button class="btn-secondary" type="submit">تسجيل كضيف</button>
+                    </form>
+                    <a class="btn-secondary" href="/guests">Guests</a>
+                </div>
+        </div>
+    </main>
+
+    <script src="{{url_for('static',filename='js/javascript.js')}}"></script>
+</body>
+</html>
