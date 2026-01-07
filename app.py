@@ -20,6 +20,9 @@ load_dotenv()
 # Initialize OAuth
 oauth = OAuth(app)
 
+# Admin emails (comma-separated) allowed to view admin pages
+ADMIN_EMAILS = set([e.strip().lower() for e in os.environ.get('ADMIN_EMAILS', '').split(',') if e.strip()])
+
 # Register providers (set these environment variables in your OS)
 GOOGLE_CLIENT_ID = os.environ.get('GOOGLE_CLIENT_ID')
 GOOGLE_CLIENT_SECRET = os.environ.get('GOOGLE_CLIENT_SECRET')
@@ -235,7 +238,4 @@ def guests():
     rows = db.execute('SELECT id, name, email, created_at FROM guests ORDER BY created_at DESC').fetchall()
     return render_template('guests.html', guests=rows)
 
-
-if __name__ == '__main__':
-    app.run(debug=True)
 
