@@ -2,3 +2,4 @@ Flask
 Authlib
 python-dotenv
 gunicorn
+gunicorn==19.7.1
