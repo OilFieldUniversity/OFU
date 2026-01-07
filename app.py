@@ -48,6 +48,14 @@ if FACEBOOK_CLIENT_ID and FACEBOOK_CLIENT_SECRET:
 
 
 def ensure_guests_table():
+    # helper to get DB connection (defined before ensure_guests_table to avoid
+    # NameError when ensure_guests_table is called at import time)
+    def get_db():
+        if 'db' not in g:
+            g.db = sqlite3.connect(app.config['DATABASE'])
+            g.db.row_factory = sqlite3.Row
+        return g.db
+
     db = get_db()
     db.execute('''
         CREATE TABLE IF NOT EXISTS guests (
