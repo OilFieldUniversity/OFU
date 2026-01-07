@@ -3,3 +3,4 @@ Authlib
 python-dotenv
 gunicorn
 gunicorn==19.7.1
+gunicorn==19.9.0
